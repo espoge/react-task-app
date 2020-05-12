@@ -1,0 +1,26 @@
+.show-button{
+    display: inline
+}
+
+.hide-button{
+    display: none
+}
+
+.hight-text{
+    color: red
+}
+.low-text{
+    color: green
+}
+.medium-text{
+    color: orange
+}
+
+.row-task {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.row-task div{
+    flex:1
+}

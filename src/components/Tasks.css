@@ -1,0 +1,8 @@
+.task-container {
+    width: 500px;
+    display: block;
+    padding: 8px;
+    margin: 50px auto 0 auto;
+    border: 1px solid #ccc;
+    min-height: 200px;
+}
