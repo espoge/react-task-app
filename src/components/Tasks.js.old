@@ -1,34 +1,29 @@
-import React, {useContext } from 'react'
+import React, {useState} from 'react'
 import TaskForm from './TaskForm'
 import TaskList from './TaskList'
-import {TasksContext} from './TasksContext'
 import './Tasks.css'
-
 const Tasks = props =>{
-    console.log(props)
-    const [userTasks, setUserTasks] = useContext(TasksContext);
-
-    const addTask = task =>{
-        
-        setUserTasks(prevTask => [
+    const [userTasks,setTasks] = useState([])
+    /*const addTask = task =>{
+        setTasks(prevTask => [
             ...prevTask,{isDone:false,...task }
           ]);
-    }
-   /* const addTask = task =>{
+    }*/
+    const addTask = task =>{
         const newTask = [...userTasks,{isDone:false,...task }]
         setTasks(newTask)
-    }*/
+    }
     
     const completedTask = index =>{
         let updateTask = [...userTasks]
         updateTask[index].isDone = true
-        setUserTasks(updateTask) //operazione atomica
+        setTasks(updateTask) //operazione atomica
 
     }
 
     return (
         <div className="task-container">
-            <TaskForm onAddTask={addTask} />
+            <TaskForm onAddTask={addTask}/>
             <TaskList tasks={userTasks} onComplete={completedTask}/>
         </div>
         )

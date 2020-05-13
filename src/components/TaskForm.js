@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './TaskForm.css'
 
-const TaskForm = props =>{
+const TaskForm = (props) =>{
+
     const [inputTask, setinputTask] = useState('')
     const [inputPriority, setInputPriority] = useState('hight')
     const priorityList = ['hight','medium','low']
